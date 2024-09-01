@@ -1,0 +1,248 @@
+
+.body {
+    position: relative;
+    min-height: 100vh;
+    min-width:1380px;
+    display:flex;
+    top: 60px;
+    margin-top:30px;
+    vertical-align: baseline;
+    justify-content: center;
+}
+
+.body::before {
+    position:fixed;
+    content: "";
+    background-image: url('./image/Today is a beautiful day.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.38; /* 设置背景图片的透明度 */
+    z-index: -3; /* 确保伪元素在内容下方 */
+}
+
+.container{
+    display:flex;
+    align-self: center;
+    justify-content: center;;
+    width:auto;
+    unicode-bidi: isolate;
+}
+
+.mainContent{
+    display:flex;
+    flex-direction:column;
+    margin-right:20px;
+}
+
+.sideContent{
+    display:flex;
+    position:relative;
+    flex-direction:column;
+}
+
+.communityInner{
+    position:relative;
+    padding:20px;
+    height:auto;
+}
+
+.communityRec{
+    position:relative;
+    display:flex;
+    background-color: white;
+    width:400px;
+    height:auto;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px;
+    margin-left:20px;
+}
+
+/*.communityCircle{
+    position:relative;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 22px;
+    border-width: 1px;
+    border-color:rgba(248,169,202,0.45);
+    border-style:solid;
+    width:110px;
+    height:20px;
+    top:20px;
+    left:20px;
+    background: white; 
+    padding: 10px 10px;
+    transition: background 0.3s; 
+}*/
+
+.iconText{
+    text-decoration: none;
+    color:black;
+    position:relative;
+    font-size: 22px;
+    margin-left: 10px;
+    top:0;
+    font-family: 'Gabriola';
+}
+
+
+.carouselRec{
+    position:relative;
+    background-color: white;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px;
+    height: 400px;
+    width: 800px;
+    
+}
+
+.weekNewsRec{
+    margin-top:20px;
+    background-color: white;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px;
+    height:auto;
+}
+
+.weekNewsTitle{
+    position:relative;
+    height:auto;
+
+}
+
+.weekNewsInner{
+    position:relative;
+    padding:20px;
+    height:auto;
+}
+
+.weekNewsContent{
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    /*border: 1px solid #BEBEBE;*/
+    width:auto;
+    height:auto;
+}
+
+.weekNavTabs{
+    display:flex;
+    flex-direction: column;
+}
+
+.weekNav{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.weekNavItem{
+    display: flex;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.Monday{
+    align-items: center;
+    margin-left:5px;
+    color:rgb(153, 153, 153);
+}
+.Tuesday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+.Wednesday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+.Thursday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+.Friday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+.Saturday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+.Sunday{
+    align-items: center;
+    margin-left:20px;
+    color:rgb(153, 153, 153);
+}
+
+.weekNavItemScroll{
+    width:20px;
+    border-radius: 2px;
+    background-color: rgba(248,169,202,0.45);
+    height:4px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.weekNewsListContainer{
+    padding-top:12px;
+}
+
+.weekNewsListInner{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.weekNewsListBar{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px; /* 固定间隔 */
+    padding: 0 10px;
+    scrollbar-width:thin;
+    overflow-x: auto;
+}
+
+.weekNewsListCard{
+    display:flex;
+    flex-direction: column;
+    width:100px;
+    height:auto;
+    flex-shrink: 0;
+}
+
+.weekNewsListImg{
+    width:100px;
+    height:133px;
+    border-radius: 10px;
+}
+
+
+.newsRec{
+    margin-top:20px;
+    background-color: white;
+    border: 1px solid #BEBEBE;
+    border-radius: 20px;
+    height:auto;
+}
+
+.newsInner{
+    position:relative;
+    padding:20px;
+    height:auto;
+}
+
+.newsContent{
+    display:flex;
+    flex-direction: column;
+    column-gap: 10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    height:auto;
+}

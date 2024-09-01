@@ -1,0 +1,15 @@
+.newsCard{
+    width:100%;
+    height:200px;
+    display:flex;
+}
+
+.cover{
+    padding-top:10px;
+    padding-bottom:10px;
+    width:40%;
+}
+
+.content{
+    margin-left:20px;
+}

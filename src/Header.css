@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Gabriola';  /* 定义一个名称来引用这个字体 */
+    src: 
+         url('fonts/XiaolaiSC-Regular.ttf') format('truetype');
+    font-weight: normal;  /* 字体的粗细，可以是normal, bold, 100-900等 */
+    font-style: normal;  /* 字体的风格，可以是normal, italic, oblique等 */
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-right:10px;
+    margin:0px 0px;
+    z-index:1000;
+    top:0px;
+    position:fixed;
+    width:100%;
+    height:60px;
+}
+
+.logo {
+    flex:1;
+    margin-right:10px;
+    margin-left:0px;
+    max-width: 50px;
+    margin-top:auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #000;
+}
+
+.navLinks{
+    width:300px;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin-left:20px;
+    background: rgba(248,169,202,0.45); /* 圆角矩形的背景色 */
+    padding: 10px 10px;
+    border-radius: 13px; /* 圆角大小 */
+    transition: background 0.3s; /* 背景色变化的过渡效果 */
+}
+
+@media(max-width:984px){
+    .navLinks{
+        display: none;
+    }
+}
+
+@media(max-width:830px){
+    .title{
+        display: none;
+    }
+}
+
+.navLinks li{
+    justify-content: flex;
+}
+
+.navLinks li a:hover {
+    color: #276CE6; /* 鼠标悬停时的背景色 */
+}
+
+.navLinks li a {
+    text-decoration: none;
+    transition: background 0.3s;
+    padding: 5px 10px;
+    font-weight: normal;
+    font-family:'Gabriola';
+    color: #000;
+}
+
+.searchBox{
+    display:flex;
+    margin-left:auto;
+    margin-right:30px;
+}
+
+.searchBox input{
+    width:500px;
+    padding: 5px;
+    border: 1px solid #ccc; /* 边框样式 */
+    border-radius: 15px; /* 输入框圆角 */
+    margin-right: 10px;
+}
+
+.searchBox button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px; /* 按钮圆角 */
+    background: rgba(248,169,202);
+    color: #fff;
+    cursor: pointer;
+}
+.searchBox button:hover {
+    background: #276CE6;
+}
+
+
+
