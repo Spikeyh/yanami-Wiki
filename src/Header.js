@@ -30,7 +30,7 @@ export default function Header() {
   return(
 <nav className="navBar">
   <img className="logo" src=
-  "yanami.png" alt='Yanami logo'/>
+  "/yanami.png" alt='Yanami logo'/>
   <a className="title">Yanami</a>
     <ul className="navLinks">
       <li><a href="https://www.baidu.com">主页</a></li>

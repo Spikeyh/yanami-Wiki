@@ -6,9 +6,8 @@
     border-width: 1px;
     border-color:rgba(248,169,202,0.45);
     border-style:solid;
-    width:130px;
+    width:150px;
     height:20px;
-
     background: white; /* 圆角矩形的背景色 */
     padding: 10px 10px;
     transition: background 0.3s; /* 背景色变化的过渡效果 */

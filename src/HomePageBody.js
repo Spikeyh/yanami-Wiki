@@ -1,4 +1,5 @@
 import './HomePageBody.css';
+import Header from './Header';
 import React, { useState, useEffect, useRef,useCallback } from 'react';
 import CircleCard from './Card/CircleCard';
 import NewsCard from './Card/NewsCard';
@@ -42,12 +43,18 @@ export default function HomePageBody() {
 
     const fetchWeekData = async(day) => {
         try {
-            const response = await fetch(``);
+            const response = await fetch(`http://wv9679as703.vicp.fun/animes`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            setWeekData(data[day] || []);
+
+            const filteredData = data.filter(item => {
+                const weekday = new Date(item.release_weekday).toLocaleDateString('en-US', { weekday: 'long' });
+                return weekday === day;
+            });
+            
+            setWeekData(filteredData);
             
         } catch (error) {
             console.error('Error fetching week data:', error);
@@ -67,9 +74,9 @@ export default function HomePageBody() {
         };
     };
 
+
+
     const [articles, setArticles] = useState([]);
-
-
 
     const fetchArticles = useCallback( async () => {
         try {
@@ -98,6 +105,8 @@ export default function HomePageBody() {
     };
 
     return(
+        <>
+    <Header />
     <div className="body"> 
         <div className="container">
             <div className="mainContent">
@@ -114,7 +123,7 @@ export default function HomePageBody() {
                 <section className="weekNewsRec">
                     <div className="weekNewsInner">
                         <div className="weekNewsTitle">
-                        <CircleCard src={weeks} alt={"weeks"}  href="https://www.baidu.com">
+                        <CircleCard src={weeks} alt={"weeks"}  href="https://www.baidu.com"fontFamily={"Gabriola"}>
                         每周新番
                         </CircleCard>
                         </div>
@@ -171,7 +180,7 @@ export default function HomePageBody() {
                 <section className="newsRec">
                     <div className="newsInner">
                         <div className="newsTitle">
-                        <CircleCard src={news} alt={"news"}  href="https://www.baidu.com">
+                        <CircleCard src={news} alt={"news"}  href="https://www.baidu.com" fontFamily={"Gabriola"}>
                         新番资讯
                         </CircleCard>
                         </div>
@@ -195,7 +204,7 @@ export default function HomePageBody() {
             <div className="sideContent">
                     <section className="communityRec">
                         <div className="communityInner">
-                            <CircleCard src={community} alt={"community"} href="https://www.baidu.com">
+                            <CircleCard src={community} alt={"community"} href="https://www.baidu.com"fontFamily={"Gabriola"}>
                             社区讨论
                             </CircleCard>
                         </div>
@@ -203,6 +212,7 @@ export default function HomePageBody() {
             </div>
         </div>
     </div>
-           
+    <footer></footer>
+    </>  
     );
 }
