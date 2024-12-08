@@ -1,0 +1,129 @@
+.AIBody::before {
+    position:fixed;
+    content: "";
+    background-image:url("./image/FirstCover.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    height:760px;
+    width:100%;
+    opacity: 0.38; /* 设置背景图片的透明度 */
+    z-index: -3; /* 确保伪元素在内容下方 */
+}
+
+.AIBodyInner{
+    border-radius:10px;
+    margin-left:50px;
+    margin-right:50px;
+    padding:10px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:660px;
+}
+
+.AIChatContainer{
+    height:600px;
+}
+
+.AIBody{
+    position: relative;
+    height:auto;
+    min-width:1380px;
+    display:flex;
+    top: 60px;
+    vertical-align: baseline;
+    justify-content: center;
+}
+
+.preView{
+    margin-top:150px;
+
+}
+
+.AIInputContainer{
+    border-radius:15px;
+    background-color: white;
+    width:600px;
+    height:auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding:10px;
+}
+
+.AIInput{
+    flex-grow: 1; /* 输入框占据剩余空间 */
+    padding: 10px; /* 内边距 */
+    border: 1px #ddd; /* 边框 */
+    border-radius: 4px; /* 圆角 */
+    font-family:'Arial';
+    font-size: 14px;
+     /* 与发送按钮之间的间距 */
+    outline: none; /* 移除聚焦时的轮廓 */
+    width:100%;
+    text-wrap: auto;
+}
+
+
+  
+.AIButton {
+    padding: 10px 20px; /* 内边距 */
+    background-color: rgba(248,169,202); /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 无边框 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    outline: none; /* 移除聚焦时的轮廓 */
+    margin-left:520px;
+  }
+  
+.AIButton:hover {
+    background-color: rgba(248,169,202,0.45); /* 鼠标悬停时的深色背景 */
+}
+
+.AIChatHistory{
+    width:600px;
+}
+
+#AILoading {
+    text-align: center; /* 居中加载动画 */
+    margin-top: 20px;
+  }
+  
+.AILoader {
+    border: 5px solid #f3f3f3; /* 灰色边框 */
+    border-top: 5px solid rgba(248,169,202,0.45); /* 蓝色旋转部分 */
+    border-radius: 50%; /* 圆形 */
+    width: 30px; /* 宽度 */
+    height: 30px; /* 高度 */
+    animation: spin 2s linear infinite; /* 旋转动画 */
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  #chatHistory {
+    margin-top: 20px; /* 与加载动画的间距 */
+    padding: 10px; /* 内边距 */
+    background-color: #fafafa; /* 浅灰色背景 */
+    border-radius: 6px; /* 圆角 */
+    max-height: 450px; /* 最大高度 */
+    overflow-y: auto; /* 超出部分滚动 */
+  }
+  
+  #chatHistory div {
+    font-size:15px;
+    line-height: 1.5;
+    margin-bottom: 10px; /* 消息之间的间距 */
+    padding: 8px 12px; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    /*background-color: #e8e8e8; /* 消息背景颜色 */
+    border: 3px solid rgba(248,169,202,0.45); /* 左侧边框颜色，用于区分用户和AI消息 */
+  }
+  
+  #chatHistory div:last-child {
+    margin-bottom: 0; /* 最后一条消息不需要底部间距 */
+  }

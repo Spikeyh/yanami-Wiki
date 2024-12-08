@@ -16,25 +16,27 @@ const mockAnimeData=[
         "introduction":"没能赢得心上人恋情的女孩——“败犬女主”。\n爱吃的青梅竹马系女主·八奈见杏菜。\n活力充沛的运动系女主·烧盐柠檬。\n怕生的小动物系女主·小鞠知花。\n被有点缺憾的败犬女主——败女们环绕，新感觉、乱糟糟的败走系青春故事就此揭幕。因失败而更加闪耀吧，败女们！",
         "staff":['原作：雨森たきび','监督：北村翔太郎'],
         "characters":['八奈见杏菜\ncv:远野光','烧盐柠檬','小鞠知花'],
-        "source":'',
-        "op":'https://www.bilibili.com/video/BV1LmYxekEMf/?spm_id_from=333.337.search-card.all.click&vd_source=a288e17fbeba900282e10cb7e813c60f',
-        "ed":'https://www.bilibili.com/video/BV1LmYxekEMf?p=2&vd_source=a288e17fbeba900282e10cb7e813c60f',
+        "sources":'https://www.bilibili.com/video/BV1LmYxekEMf?p=2&vd_source=a288e17fbeba900282e10cb7e813c60f',
+        "pv":" //player.bilibili.com/player.html?isOutside=true&aid=1501968818&bvid=BV1MD42177Pu&cid=1472905046&p=1" ,
+        "op":"//player.bilibili.com/player.html?isOutside=true&aid=112926216162646&bvid=BV1LmYxekEMf&cid=500001642552262&p=1",
+        "ed":'',
         "ratings":9.2
     }
 ]
 
+
 export default function Item(){
     const { animeID } = useParams();
     const animeIDInt=parseInt(animeID);//console.log(animeID);
-    //const [anime, setAnime] = useState(null);
+    const [anime, setAnime] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const anime = mockAnimeData[animeIDInt];
+    //const anime = mockAnimeData[animeIDInt];
     //const animeData=getAnimeData(animeId);
 
-    /*useEffect(() => {
-        axios.get(`http://96eq798wx921.vicp.fun/api/resources`)
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:5000/resources`)
             .then((response) => {
                 const selectedAnime = response.data.find(anime => anime.animeID === animeIDInt);
                 setAnime(selectedAnime || mockAnimeData.find(anime => parseInt(anime.animeID, 10) === animeIDInt));
@@ -57,7 +59,7 @@ export default function Item(){
 
 if (!anime) {
     return <div>No data available for this anime.</div>;
-}*/
+}
 
     const backgroundStyle = {
         backgroundImage: `url(${anime.cover})`,
@@ -91,7 +93,8 @@ if (!anime) {
                                     <div className="itemTopMidContent">
                                         <div className="itemTitle">{anime.title}<p className="itemTitleRecBottom"></p></div>
                                         <div className="itemIntroduction"><CircleCard src="" fontFamily={"comic"}>Introduction</CircleCard>
-                                        <div className="itemIntroductionContent">{renderIntroduction(anime.introduction)}</div></div>
+                                        <div className="itemIntroductionContent">{renderIntroduction(anime.introduction)}</div>
+                                        </div>
                                     </div>
                                     <div className="itemTopRightRightContent">
                                         <div className="bangumi">
@@ -104,50 +107,45 @@ if (!anime) {
                             </div>
                         </div>
                     
-                    <div className="itemContent">
-                        <div className="itemLeftContent">
-                        <div className="PVRec"><div className="PVTitle">PV</div>
-                        <div className="PVTitleBottom"/>
-                        <div className="PVContent">
-                            <iframe className="PVFrame" src={anime.PV}></iframe>
-                        </div>
-                        </div>
+                        <div className="itemContent">
+                            <div className="itemLeftContent">
+                            <div className="PVRec"><div className="PVTitle">PV</div>
+                            <div className="PVTitleBottom"/>
+                            <div className="PVContent">
+                                <iframe className="PVFrame" src={anime.pv}></iframe>
+                            </div>
+                            </div>
 
-                        <div className="OPRec"><div className="OPTitle">OP/ED</div>
-                        <div className="OPTitleBottom"/>
-                        <div className="OPContent">
-                            <iframe className="OPFrame" src={anime.OPED}></iframe>
-                        </div>
-                        </div>
+                            <div className="OPRec"><div className="OPTitle">OP/ED</div>
+                            <div className="OPTitleBottom"/>
+                            <div className="OPContent">
+                                <iframe className="OPFrame" src={anime.op}></iframe>
+                            </div>
+                            </div>
 
-                        <div className="sourcesRec">
-                        <div className="sourcesTitle">Sources</div>
-                            <div className="sourcesTitleBottom"/>
-                            <div className="sourcesContent">{anime.source}</div>
-                        <div className="sourcesContent">
+                            <div className="sourcesRec">
+                            <div className="sourcesTitle">Sources</div>
+                                <div className="sourcesTitleBottom"/>
+                                <div className="sourcesContent" >{anime.sources}</div>
+                            </div>
+                            
+                            </div>
+                            <div className="itemRightContent">
+                                <CircleCard src={community} fontFamily={"comic"}className="staff">Staff</CircleCard>
+                                    <ul className="staffList">
+                                        {anime.staff.map((name, index) => (
+                                        <li key={index}>{name}</li>
+                                        ))}
+                                    </ul>
+                                <CircleCard src={community} fontFamily={"comic"}className="characters">Characters</CircleCard >
+                                    <ul className="characterList">
+                                        {anime.characters.map((name, index) => (
+                                        <li key={index}>{name}</li>
+                                        ))}
+                                    </ul>
+                            
+                            </div>
                         </div>
-
-                        
-
-                        </div>
-                        
-                        </div>
-                        <div className="itemRightContent">
-                            <CircleCard src={community} fontFamily={"comic"}className="staff">Staff</CircleCard>
-                                <ul className="staffList">
-                                    {anime.staff.map((name, index) => (
-                                    <li key={index}>{name}</li>
-                                    ))}
-                                </ul>
-                            <CircleCard src={community} fontFamily={"comic"}className="characters">Characters</CircleCard >
-                                <ul className="characterList">
-                                    {anime.characters.map((name, index) => (
-                                    <li key={index}>{name}</li>
-                                    ))}
-                                </ul>
-                        
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>

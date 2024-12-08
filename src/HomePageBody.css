@@ -1,13 +1,13 @@
 
 .body {
     position: relative;
-    min-height: 100vh;
     min-width:1380px;
     display:flex;
     top: 60px;
     margin-top:30px;
     vertical-align: baseline;
     justify-content: center;
+    padding-bottom:50px;
 }
 
 .body::before {
@@ -24,6 +24,21 @@
     opacity: 0.38; /* 设置背景图片的透明度 */
     z-index: -3; /* 确保伪元素在内容下方 */
 }
+
+.mentionBody::before {
+    position:fixed;
+    content: "";
+    background-image: url('./image/Today is a beautiful day.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.38; /* 设置背景图片的透明度 */
+    z-index: -3; /* 确保伪元素在内容下方 */
+  }
 
 .container{
     display:flex;
@@ -99,6 +114,14 @@
     height: 400px;
     width: 800px;
     
+}
+
+.carouselImg{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 400px;
 }
 
 .weekNewsRec{
@@ -209,6 +232,8 @@
     padding: 0 10px;
     scrollbar-width:thin;
     overflow-x: auto;
+    overflow:auto;
+    width:760px;
 }
 
 .weekNewsListCard{
@@ -217,6 +242,9 @@
     width:100px;
     height:auto;
     flex-shrink: 0;
+    text-decoration: none;
+    color:black;
+    
 }
 
 .weekNewsListImg{
@@ -247,4 +275,8 @@
     padding-top:20px;
     padding-bottom:20px;
     height:auto;
+}
+
+.communityContent{
+    margin-top:20px;
 }

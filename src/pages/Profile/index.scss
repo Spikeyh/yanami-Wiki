@@ -1,0 +1,85 @@
+.profile-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 防止滚动条出现 */
+
+  /* 使用伪元素添加背景图像 */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/Today is a beautiful day.png'); /* 确保路径正确 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.38; /* 设置背景图像的透明度 */
+    z-index: -1; /* 确保背景在内容之下 */
+  }
+}
+
+.profile-content-wrapper {
+  display: flex;
+  flex: 1;
+  padding-top: 50px; /* 留出 Header 空间 */
+}
+
+.profile-sider {
+  width: 300px;
+  background-color: transparent;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+}
+
+.profile-avatar-container {
+  padding: 16px;
+  border-bottom: 1px solid #ddd; /* 分界线 */
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: white; /* 背景色 */
+  border-radius: 5px; /* 圆角 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影 */
+}
+
+.avatar-img {
+  width: 80px; /* 头像宽度 */
+  height: 80px; /* 头像高度 */
+  border-radius: 50%; /* 圆形头像 */
+  border: 3px solid #1890ff; /* 边框 */
+  margin-right: 16px; /* 与用户名的间距 */
+}
+
+.avatar-info {
+  flex: 1;
+}
+
+.avatar-info h2 {
+  margin: 0;
+  font-size: 16px;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+
+.profile-content {
+  flex: 1;
+  padding: 20px;
+  background: transparent;
+}
+
+.profile-sider .ant-menu-item {
+  font-size: 16px;
+}
+
+
+  

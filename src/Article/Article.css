@@ -3,7 +3,6 @@
     margin-left:160px;
     margin-right:160px;
     display:flex;
-    align-items: center;
     justify-content: center;
     width:1200px;
     margin-top:35px;
@@ -21,22 +20,34 @@
     padding-left:30px;
     padding-right:30px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
-    height:100%;
+    height:1000px;
     align-items: center;
-    
 }
 
 .articleRightContent{
     width:300px;
     margin-left:30px;
     margin-right:10px;
-    background-color: white;
-    border-radius: 10px;
-    padding-top:23px;
+    
+    /*padding-top:23px;
     padding-bottom:20px;
     padding-left:20px;
-    padding-right:20px;
+    padding-right:20px;*/
+    height:100%;
+}
+
+.articleStickyContent{
+    position: sticky;
+    top: 80px;
+    background-color: white;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
+    height:300px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .articleTitleTagRec{
@@ -93,6 +104,35 @@
     font-size:16px;
     font-weight: 400;
     line-height:28.8px;
+}
+
+.articleFooter{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:20px;
+}
+
+.articleYanami{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.articleYanamiImage{
+    margin-top:5px;
+    width:100px;
+}
+
+
+.articleYanamiTitle{
+    font-family: 'Gabriola';
+}
+
+.articleYanamiText{
+    font-family: 'Gabriola';
 }
 
 

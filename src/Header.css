@@ -21,7 +21,7 @@
     height:60px;
 }
 
-.logo {
+.yanamiLogo {
     flex:1;
     margin-right:10px;
     margin-left:0px;
@@ -29,7 +29,8 @@
     margin-top:auto;
 }
 
-.title {
+.yanamiTitle {
+    font-family:'comic';
     font-size: 24px;
     font-weight: bold;
     margin-left: 10px;
@@ -55,7 +56,7 @@
 }
 
 @media(max-width:830px){
-    .title{
+    .searchBox form {
         display: none;
     }
 }

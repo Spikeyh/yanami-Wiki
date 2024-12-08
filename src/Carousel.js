@@ -3,23 +3,23 @@ import './Carousel.css';
 
 const images = [
     {
-      src: 'yanamianna.png',
+      cover: 'yanamianna.png',
       alt: 'Image 1',
       text: 'This is the first image',
     },
     {
-      src: 'image2.jpg',
+      cover: 'image2.jpg',
       alt: 'Image 2',
       text: 'This is the second image',
     },
     {
-      src: 'image3.jpg',
+      cover: 'image3.jpg',
       alt: 'Image 3',
       text: 'This is the third image',
     },
   ];
 
-export default function Carousel() {
+export default function Carousel({images}) {
     const[currentIndex,setCurrentIndex]=useState(0);
     const[isHovered,setIsHovered]=useState(false);
 
@@ -30,12 +30,13 @@ export default function Carousel() {
             }
         },3000);
         return ()=>clearInterval(interval);
-    },[isHovered/*,images.length*/]);
+    },[isHovered,images.length]);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
     
+
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
@@ -49,7 +50,7 @@ export default function Carousel() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <img src={image.src} alt={image.alt} className="carousel-image" />
+            <img src={image.cover} alt={image.alt} className="carousel-image" />
             <div className="overlay">
               <p>{image.text}</p>
             </div>

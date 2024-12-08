@@ -1,0 +1,467 @@
+.mention-page {
+  padding: 60px 20px 20px; /* 增加顶部内边距以向下平移 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+ // background-color: #f4f4f9; /* 背景色更柔和 */
+}
+
+
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.left-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 增加子项间距 */
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 增加子项间距 */
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 增加间距 */
+  border-right: 1px solid #e0e0e0; /* 细化分界线颜色 */
+  padding-right: 20px; /* 与右侧标签部分分隔 */
+}
+
+.post-wrapper {
+  width: 100%;
+  max-width: 600px; /* 确保宽度一致 */
+}
+
+.add-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff; /* 纯白色背景 */
+  padding: 20px; /* 增加内边距 */
+  border-radius: 12px; /* 更圆滑的圆角 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 更明显的阴影效果 */
+  border-bottom: 1px solid #e0e0e0; /* 与分界线统一 */
+  position: relative;
+}
+
+.textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+.add-post textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px; /* 增加内边距 */
+  border-radius: 10px; /* 圆角边框 */
+  border: 1px solid #e0e0e0; /* 与背景统一 */
+  resize: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fafafa; /* 背景颜色更柔和 */
+}
+
+.ant-btn.post-button {
+  width: 100px; /* 设置按钮宽度 */
+  height: 32px; /* 设置按钮高度 */
+  padding: 6px; /* 调整按钮内边距 */
+  font-size: 14px; /* 设置按钮字体大小 */
+  position: absolute;
+  right: 10px; /* 调整按钮的右边距 */
+  bottom: 10px; 
+  background-color: #ff00d4;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* 更圆滑的圆角 */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+  &:hover {
+    background-color: #e6009f;
+    transform: scale(1.05); /* 悬停时放大 */
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 174, 0.3); /* 添加焦点阴影 */
+  }
+}
+
+.mention-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中对齐 */
+  width: 100%;
+  max-width: 600px; /* 确保与其他内容宽度一致 */
+  padding-top: 40px; /* 向下平移帖子部分 */
+}
+
+.posts-list {
+  background: #ffffff; /* 纯白色背景 */
+  border-radius: 12px; /* 更圆滑的圆角 */
+  padding: 20px; /* 增加内边距 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 更明显的阴影效果 */
+  width: 100%;
+  border-top: 1px solid #e0e0e0; /* 上边框与分界线统一 */
+}
+
+.posts-list p {
+  margin: 0; /* 去除默认的段落边距 */
+  color: #333; /* 更深的文本颜色 */
+  font-size: 16px; /* 增加字体大小 */
+}
+
+
+.post-item {
+  width: 100%;
+  max-height: 200px;
+  overflow: auto;
+  border-bottom: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-item:hover {
+  background-color: #f9f9f9;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.right-section .tags,
+.right-section .ranking {
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* 增加标签和排行榜之间的间距 */
+}
+
+.right-section .tags h3,
+.right-section .ranking h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* 基础标签样式 */
+.tag-item {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  line-height: normal; /* 允许多行文本 */
+  position: relative; /* 使用相对定位 */
+}
+
+/* 不同标签的样式 */
+.tag-item-1 {
+  background-color: #f56c6c; /* 红色背景 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50px; /* 椭圆形 */
+  top: -10px;
+  font-style: italic;
+}
+
+.tag-item-2 {
+  background-color: #f59b42; /* 橙色背景 */
+  width: 70px;
+  height: 70px;
+  border-radius: 50px; /* 更大的椭圆形 */
+  left: 20px;
+}
+
+.tag-item-3 {
+  background-color: #f0a500; /* 黄色背景 */
+  width: 30px;
+  height: 30px;
+  border-radius: 50px; /* 更小的椭圆形 */
+  top: -50px;
+  left: 10px;
+}
+.tag-item-4 {
+  background-color: #9ef52d; /* 蓝色背景 */
+  width: 35px;
+  height: 35px;
+  border-radius: 50px; /* 椭圆形 */
+  top: 10px;
+  left: 5px;
+}
+
+.tag-item-5 {
+  background-color: #2db7f5; /* 蓝色背景 */
+  width: 35px;
+  height: 35px;
+  border-radius: 50px; /* 椭圆形 */
+  top: 10px;
+  left: 30px;
+}
+
+.ranking {
+  width: 300px;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center; /* 居中对齐 */
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* 移除默认的列表样式 */
+  }
+
+  .ranking-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .rank-number {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .item-name {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  /* Define colors for rank numbers */
+  .rank-1 { background-color: #f44336; }
+  .rank-2 { background-color: #2196F3; }
+  .rank-3 { background-color: #4CAF50; }
+  .rank-4 { background-color: #FFC107; }
+  .rank-5 { background-color: #9C27B0; }
+  .rank-6 { background-color: #b0273e; }
+  .rank-7 { background-color: #b06027; }
+  .rank-8 { background-color: #8927b0; }
+  .rank-9 { background-color: #2cb027; }
+  .rank-10 { background-color: #2762b0; }
+  /* Add more as needed */
+}
+
+.ranking li {
+  margin-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.post-details {
+  .post-images {
+    margin-bottom: 20px;
+
+    .post-image {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+.ranking-subtitle {
+  font-size: 14px;
+  color: #999999;
+  margin: 10px 0;
+  margin-left: 25px;
+  /* text-align: center; */
+  font-weight: normal;
+}
+.post-text-container {
+  position: relative;
+  background: #fff; /* 背景色为白色 */
+  border-radius: 8px; /* 圆角边框 */
+  padding: 15px; /* 内边距 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+}
+
+.post-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-height 0.3s ease, padding-bottom 0.3s ease; /* 平滑过渡效果 */
+}
+
+.post-text.collapsed {
+  max-height: 6em; /* 根据需要调整高度 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 限制为三行 */
+  -webkit-box-orient: vertical;
+  padding-bottom: 10px; /* 增加下边距 */
+}
+
+.post-text.expanded {
+  white-space: normal;
+  padding-bottom: 15px; /* 增加下边距 */
+}
+
+.post-button2 {
+  width: 70px; /* 设置按钮宽度 */
+  height: 28px; /* 设置按钮高度 */
+  padding: 6px; /* 调整内边距 */
+  font-size: 14px; /* 设置按钮字体大小 */
+  position: absolute; /* 使用绝对定位 */
+  right: 15px; /* 调整按钮的右边距 */
+  bottom: -15px; /* 调整按钮的下边距 */
+  background-color: #ff00ae; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none; /* 去掉按钮的边框 */
+  border-radius: 8px; /* 设置按钮的圆角 */
+  cursor: pointer; /* 鼠标悬停时显示为手形光标 */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 设置背景色和缩放的过渡效果 */
+  
+  &:hover {
+    background-color: #e6009f; /* 悬停时的背景色 */
+    transform: scale(1.05); /* 悬停时放大 */
+  }
+
+  &:focus {
+    outline: none; /* 去掉按钮的焦点轮廓 */
+    box-shadow: 0 0 0 2px rgba(255, 0, 174, 0.5); /* 添加焦点阴影 */
+  }
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* 增加底部间距 */
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+  font-size: 16px; /* 增加字体大小 */
+}
+
+.post-date {
+  color: #999; /* 日期颜色 */
+  font-size: 14px; /* 日期字体大小 */
+  margin-left: auto; /* 右对齐 */
+}
+
+.post-header::after {
+  content: ''; /* 为头部添加分隔线 */
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin-top: 10px; /* 分隔线与内容之间的间距 */
+}
+/* 选择 Ant Design 的按钮并添加特定样式 */
+.ant-btn.like-button {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 28px;
+  width: 40px;
+  margin-right: 8px;
+  background-color: #ff00ae;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e6009f;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 0, 174, 0.5);
+  }
+}
+.delete-button {
+  font-size: 12px; /* 调整字体大小 */
+  padding: 4px 8px; /* 调整内边距 */
+  border-radius: 4px; /* 圆角半径 */
+  height: 28px; /* 设置按钮高度 */
+  width: auto; /* 自动宽度，根据内容调整 */
+  margin-right: 8px; /* 按钮之间的间距 */
+  background-color: #ff4d4f; /* 删除按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none; /* 去掉按钮的边框 */
+  transition: background-color 0.3s ease; /* 背景色过渡效果 */
+
+  &:hover {
+    background-color: #ff0000; /* 悬停时的背景色 */
+  }
+
+  &:focus {
+    outline: none; /* 去掉按钮的焦点轮廓 */
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5); /* 添加焦点阴影 */
+  }
+}
+.ant-btn.reply-button {
+  font-size: 12px; /* 调整字体大小 */
+  padding: 4px 8px; /* 调整内边距 */
+  border-radius: 4px; /* 圆角半径 */
+  height: 28px; /* 设置按钮高度 */
+  width: 80px; 
+  left:380px;
+  margin-right: 8px; /* 按钮之间的间距 */
+  background-color: #1890ff; /* 回复按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none; /* 去掉按钮的边框 */
+  transition: background-color 0.3s ease; /* 背景色过渡效果 */
+
+  &:hover {
+    background-color: #40a9ff; /* 悬停时的背景色 */
+  }
+
+  &:focus {
+    outline: none; /* 去掉按钮的焦点轮廓 */
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.5); /* 添加焦点阴影 */
+  }
+}
+/* 回复项的样式 */
+.reply-item {
+  padding: 8px;
+  border-top: 1px solid #eaeaea;
+  margin-top: 8px;
+}
+
+.reply-header {
+  font-weight: bold;
+}
+
+.reply-text {
+  margin: 4px 0;
+}

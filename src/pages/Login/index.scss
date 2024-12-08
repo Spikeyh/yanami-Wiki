@@ -1,0 +1,103 @@
+$primary-color: #007bff;
+$hover-color: #0056b3;
+$error-color: red;
+
+.login-container {
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  background-color: #f0f2f5;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-item {
+  margin-bottom: 8px; // 调整间距
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+}
+
+.ant-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+
+  &.ant-btn-login {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    //width:200px;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &.ant-btn-link {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    
+    &:hover {
+      color: $hover-color;
+      background-color: $hover-color;
+    }
+  }
+}
+
+.error-message {
+  color: $error-color;
+  text-align: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  padding: 20px;
+}
+
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.avatar-img {
+  width: 80px; /* 设置头像宽度 */
+  height: 80px; /* 设置头像高度 */
+  border-radius: 50%; /* 使头像圆形 */
+  border: 3px solid #4618ff; /* 设置边框 */
+  object-fit: cover; /* 保持图片比例 */
+  margin-bottom: 8px; /* 与其他元素分开 */
+}
+
+
+
